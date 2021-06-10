@@ -15,11 +15,12 @@ while(option):
     5. To issue a book using Student Id and ISBN Code\n
     6. To calculate fine on Student ID\n
     7. To Delete a book record from stock database\n
-    0. To exit out of the ''')
+    0. To exit out of the library''')
 
-    option = int(input())
+    option = int(input("Enter the option : "))
 
     if(option == 0):
+        print("Thanks for visiting")
         break
     elif(option == 1):
         add.addBook()
