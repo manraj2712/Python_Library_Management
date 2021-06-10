@@ -15,9 +15,9 @@ def issueBook():
     import datetime
 
     df = pd.read_excel('booksIssuedDatabase.xlsx')
-    wb = openpyxl.load_workbook('C:\\Users\\Manraj\\Desktop\\python project lib management\\booksIssuedDatabase.xlsx')
+    wb = openpyxl.load_workbook('booksIssuedDatabase.xlsx')
     sheet = wb.active
-    wb_stock = openpyxl.load_workbook('C:\\Users\\Manraj\\Desktop\\python project lib management\\stockDatabase.xlsx')
+    wb_stock = openpyxl.load_workbook('stockDatabase.xlsx')
     df_stock = pd.read_excel('stockDatabase.xlsx')
     sheet_stock = wb_stock.active
 

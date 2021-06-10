@@ -5,8 +5,8 @@ def deleteBookByIsbn():
 
     isbn = input('\nEnter the ISBN Code of the book of which you want to delete record from Stock Database\n').lower()
     option = ''
-    wb = openpyxl.load_workbook('C:\\Users\\Manraj\\Desktop\\python project lib management\\stockDatabase.xlsx')
-    df = pandas.read_excel('C:\\Users\\Manraj\\Desktop\\python project lib management\\stockDatabase.xlsx')
+    wb = openpyxl.load_workbook('stockDatabase.xlsx')
+    df = pandas.read_excel('stockDatabase.xlsx')
     sheet = wb.active
 
     for i in range(len(df['isbn'])):

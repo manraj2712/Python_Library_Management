@@ -22,7 +22,7 @@ def addBook():
 
     import openpyxl as op
     
-    wb = op.load_workbook('C:\\Users\\Manraj\\Desktop\\python project lib management\\stockDatabase.xlsx')
+    wb = op.load_workbook('stockDatabase.xlsx')
     sheet = wb.active
 
     currentRow = sheet.max_row+1
