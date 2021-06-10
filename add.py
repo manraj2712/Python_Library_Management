@@ -48,5 +48,5 @@ def addBook():
             print('\nEnter a valid quantity in interger!\n')
             break
         currentColumn+=1
-
+    print("-----:Successfully Update:---")
     wb.save('stockDatabase.xlsx')
