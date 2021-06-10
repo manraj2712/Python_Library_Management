@@ -27,14 +27,17 @@
 
 import datetime
 import openpyxl
+import pandas
 
+df = pandas.read_excel('stockDatabase.xlsx')
 wb = openpyxl.load_workbook('stockDatabase.xlsx')
 sheet = wb.active
 
-sheet.delete_rows(2)
-wb.save('stockDatabase.xlsx')
+isbn = input('book name').lower()
 
-print(sheet.max_row)
+for i in range(len(df['isbn'])):
+    if(df['isbn'][i]==isbn):
+        print(i)
 
 
 # t1 = datetime.date.today()

@@ -2,20 +2,20 @@
 
 def bookDataInput(columnNumber):
     if(columnNumber == 1):
-        return input('Enter the name of the book\n').lower()
+        return input('\nEnter the name of the book\n').lower()
     elif(columnNumber == 2):
-        return input('Enter the Author for the book\n').lower()
+        return input('\nEnter the Author for the book\n').lower()
     elif(columnNumber == 3):
-        return input('Enter the ISBN Code of the book\n').lower()
+        return input('\nEnter the ISBN Code of the book\n').lower()
     elif(columnNumber == 4):
         try:
-           return int(input('Enter the Quantity Available of the book\n'))
+           return int(input('\nEnter the Quantity Available of the book\n'))
         
         except ValueError:
             return 0
 
     else:
-        print('Enter a valid column Number\n')
+        print('\nEnter a valid column Number\n')
 
 
 def addBook():
@@ -45,7 +45,7 @@ def addBook():
             elif currentColumn == 4 and qty:
                 c.value = qty
         else:
-            print('Enter a valid quantity in interger!\n')
+            print('\nEnter a valid quantity in interger!\n')
             break
         currentColumn+=1
 

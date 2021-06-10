@@ -4,20 +4,17 @@ def displayAllBooks():
     df = pd.read_excel('stockDatabase.xlsx')
     print(df)
 
-def displayBookByName():
+def displayBookByISBN():
 
     import pandas as pd
 
-    bookName = input('Enter the book name to see records\n').lower()
-    index = -1
+    isbn = input('\nEnter the book ISBN Code to see records\n').lower()
 
     df = pd.read_excel('stockDatabase.xlsx')
-    for i in range(len(df['book name'])):
-        if df['book name'][i] == bookName:
-            index = i
+    for i in range(len(df['isbn'])):
+        if df['isbn'][i] == isbn:
+            print(df.iloc[i])
             break
-    
-    print(df.iloc[index])
 
 
 

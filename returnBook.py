@@ -10,8 +10,8 @@ def returnBookByIsbn():
     sheet = wb.active
     sheet_stock = wb_stock.active
 
-    studentId = input('Enter the Student Id returning the book\n').lower()
-    bookIsbn = input('Enter the ISBN Code for the book to be returned\n').lower()
+    studentId = input('\nEnter the Student Id returning the book\n').lower()
+    bookIsbn = input('\nEnter the ISBN Code for the book to be returned\n').lower()
 
     for i in range(len(df['student id'])):
 
@@ -34,7 +34,8 @@ def returnBookByIsbn():
                     if df_stock['isbn'][j] == bookIsbn:
                         sheet_stock.cell(row=j+2,column=4).value = (int(sheet_stock.cell(row=j+2,column=4).value))+1
                         break
-
+                
+                print(f'\n Book with ISBN code {bookIsbn} has been successfully Restocked !\n')
     wb.save('booksIssuedDatabase.xlsx')
     wb_stock.save('stockDatabase.xlsx')                
 
@@ -48,12 +49,19 @@ def fineByStudentId():
     wb = openpyxl.load_workbook('booksIssuedDatabase.xlsx')
     sheet = wb.active
 
-    studentId = input('Enter the Student Id to check for fine').lower()
+    studentId = input('\nEnter the Student Id to check for fine\n').lower()
     fine = 0
-
+    flag = 0
     for i in range(len(df['student id'])):
         if(df['student id'][i]==studentId):
-            fine += int(sheet.cell(row=i+2,column=5).value)
+            try:
+                fine += int(sheet.cell(row=i+2,column=5).value)
+            except:
+                fine = 0
+            flag = 1
 
-    print('Fine for Student Id ${studentId} is Rupees ${fine}')
+    if(flag == 0):
+        print(f'\nStudent Id {studentId} is not listed with us!\n')
+    else:
+        print(f'\nFine for Student Id {studentId} is Rupees {fine}\n')
 

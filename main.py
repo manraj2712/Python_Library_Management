@@ -26,7 +26,7 @@ while(option):
     elif(option == 2):
         display.displayAllBooks()
     elif(option == 3):
-        display.displayBookByName()
+        display.displayBookByISBN()
     elif(option == 4):
         returnBook.returnBookByIsbn()
     elif(option == 5):

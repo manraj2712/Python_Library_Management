@@ -3,7 +3,7 @@ def deleteBookByIsbn():
     import openpyxl
     import pandas
 
-    isbn = input('Enter the ISBN Code of the book of which you want to delete record from Stock Database\n').lower()
+    isbn = input('\nEnter the ISBN Code of the book of which you want to delete record from Stock Database\n').lower()
     option = ''
     wb = openpyxl.load_workbook('C:\\Users\\Manraj\\Desktop\\python project lib management\\stockDatabase.xlsx')
     df = pandas.read_excel('C:\\Users\\Manraj\\Desktop\\python project lib management\\stockDatabase.xlsx')
@@ -13,10 +13,11 @@ def deleteBookByIsbn():
         
         if df['isbn'][i] == isbn:
             print(df.iloc[i])
-            print('Do you want to delete this book record?')
-            option = input('''Enter 'Y' to confirm and 'N' to Exit''').lower()
+            print('\nDo you want to delete this book record?\n')
+            option = input('''\nEnter 'Y' to confirm and 'N' to Exit\n''').lower()
             if(option == 'y'):
                 sheet.delete_rows(i+2)
+                print(f'\nBook with ISBN Code {isbn} Successfully deleted from Stock!')
                 break
             else:
                 break
